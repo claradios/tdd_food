@@ -6,7 +6,7 @@
         "description": "Carne de ternera tierna con un toque de mostaza",
         "image":"http://www.oliveradatenea.com/wp-content/uploads/2013/01/Receta-de-hamburguesa-con-salsa-brava-Olivera-dAtenea-2.jpg",
         "ingredients": [
-            "cheddar cheese",
+            "cheddar",
             "eggs",
             "olive oil",
             "onions",
@@ -25,7 +25,7 @@
             "fideos",
             "berza",
             "chorizo",
-            "carne de vacuno",
+            "vacuno",
             "pollo"
         ]
     },
@@ -38,9 +38,9 @@
         "ingredients": [
             "espaguetis",
             "tomate",
-            "carne picada",
+            "carne",
             "albahaca",
-            "queso rallado"            
+            "queso"            
         ]
     },
     {
@@ -50,7 +50,7 @@
         "description": "Con todo el sabor de italia directo a tu casa",
         "image":"https://www.africanbites.com/wp-content/uploads/2019/10/IMG_1636-2-500x500.jpg",
         "ingredients": [
-            "base de trigo sarraceno",
+            "trigo",
             "tomate",
             "queso",
             "albahaca",

@@ -18,7 +18,7 @@ function createCard (object) {
         const defaultImg = 'https://via.placeholder.com/500x500';
         const defaultIngredientes = 'Ingredientes no disponibles';
         let ingredientsList = '';         
-        if (ingredients) {ingredients.forEach(ing => ingredientsList +=`<li>${ing}</li>`)};
+        if (ingredients) {ingredients.forEach(ing => ingredientsList +=`<li class ="ingredient">${ing}</li>`)};
   
      const result =   `
         <li id=${id || defaultId} class="card">
