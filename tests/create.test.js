@@ -46,8 +46,7 @@ describe('createCard', () => {
             <p class="card__ingredients">ingredientes: ${ingredients} </p>
         </li>`;
 
-        expect(result).toEqual(output);
-        console.log('result', result);
+        expect(result).toEqual(output);        
     });
     test('createCard(obj) retund a default card', () => {
         const input = apiFoodFix[1];
