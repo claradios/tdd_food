@@ -1,5 +1,5 @@
 'use strict';
-const ENDPOINT = '../apiFood.js';
+const ENDPOINT = '../apiFood.json';
 
 function callApi() {
     return fetch(ENDPOINT).then(res => res.json());

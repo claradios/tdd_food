@@ -1,5 +1,6 @@
 'use strict';
 import { createCard } from './create.js';
+import { callApi } from './service.js';
 
 function printFoodList(list, arr = []) {
     if (list) {
@@ -9,5 +10,13 @@ function printFoodList(list, arr = []) {
     }
 }
 
-export { printFoodList };
+function printDataFood() {
+    callApi().then( data => {
+        const foodList = document.querySelector('.display__list');
+        console.log(foodList)
+        printFoodList(foodList, data); 
+     });
+};
+
+export { printFoodList, printDataFood };
 

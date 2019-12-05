@@ -1,3 +1,5 @@
 'use strict';
+import { printDataFood } from './print.js';
 
-console.log('funciona');
+printDataFood();
+
