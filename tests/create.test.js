@@ -31,7 +31,9 @@ describe('createCard', () => {
 
         expect(result).toBe('');
     });
+ 
     test('createCard(obj) retund a pinted card', () => {
+        const ing = '<li>cheddar cheese</li><li>eggs</li><li>olive oil</li><li>onions</li><li>potato</li><li>salt</li>'
         const input = apiFoodFix[0];
         const result = createCard(input);
         const { id, name, price, description, image, ingredients } = input;        
@@ -43,7 +45,7 @@ describe('createCard', () => {
                 <img src="${image}" alt="${name}">
             </div>
             <p class="card__description">${description}</p>
-            <p class="card__ingredients">ingredientes: ${ingredients} </p>
+            <ul class="card__ingredients">${ing} </ul>
         </li>`;
 
         expect(result).toEqual(output);        
@@ -52,7 +54,7 @@ describe('createCard', () => {
         const input = apiFoodFix[1];
         const defaultName = 'plato';
         const defaultDesc = 'Sin descripción';
-        const defaultIngredientes = 'No disponibles';
+        const defaultIngredientes = 'Ingredientes no disponibles';
         const result = createCard(input);
         const { id, name, price, description, image, ingredients } = input;        
         const output = `
@@ -63,7 +65,7 @@ describe('createCard', () => {
                 <img src="${image}" alt="${name}">
             </div>
             <p class="card__description">${defaultDesc}</p>
-            <p class="card__ingredients">ingredientes: ${defaultIngredientes} </p>
+            <ul class="card__ingredients">${defaultIngredientes} </ul>
         </li>`;
         expect(result).toEqual(output);
     });
