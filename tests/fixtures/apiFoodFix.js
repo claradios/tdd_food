@@ -1,4 +1,4 @@
-const apiFoodFix = [
+ const apiFoodFix = [
     {
         "id": "11a",
         "name": "Hamburguesa clásica",
@@ -16,18 +16,11 @@ const apiFoodFix = [
     },
     {
         "id": "22b",
-        "name": "Cocido madrileño",
+        "name": "",
         "price": 17.5,
-        "description": "La comida perfecta para el invierno",
+        "description": null,
         "image":"https://rioluz.es/wp-content/uploads/2019/10/COCIDO-COMPLETO-500x500.jpg",
-        "ingredients": [
-            "garbanzos",
-            "fideos",
-            "berza",
-            "chorizo",
-            "carne de vacuno",
-            "pollo"
-        ]
+        "ingredients": null
     },
     {
         "id": "33c",

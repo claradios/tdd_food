@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,12 @@
     <link rel="stylesheet" href="css/main.css">
     <title>Document</title>
 </head>
+
 <body class="app">
     <header class="app__header">
         <h1 class>"Chose your food!!"</h1>
     </header>
-    
+
     <main class="app__main">
 
         <section class="main__display">
@@ -28,6 +30,17 @@
             </div>
         </section>
     </main>
-<script type="module" src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
+
 </html>
+
+<li id=${id}` class="card">
+    <h3  class="card__name">${name || defaultName}</h3>
+    <p  class="card__price">Precio: ${price} €</p>
+    <div class="card__image">
+        <img src="${image}" alt="${name}">
+    </div>
+    <p class="card__description">${description || defaultDesc}</p>
+    <p class="card__ingredients">ingredientes: ${} </p>
+</li>
