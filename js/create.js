@@ -21,7 +21,7 @@ function createCard (object) {
             <h3 class="card__name">${name || defaultName}</h3>
             <p class="card__price">Precio: ${price || defaultPrice} €</p>
             <div class="card__image">
-                <img src="${image || defaultImg}" alt="${name}">
+                <img class="card__photo" src="${image || defaultImg}" alt="${name}"/>
             </div>
             <p class="card__description">${description || defaultDesc}</p>
             <p class="card__ingredients">ingredientes: ${ingredients || defaultIngredientes} </p>
