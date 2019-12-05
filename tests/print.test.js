@@ -1,13 +1,9 @@
 import { printFoodList } from '../js/print.js';
 import { apiFoodFix } from './fixtures/apiFoodFix';
+import * as createModule from '../js/create.js'
 
-
-describe('printFoodList', () => {
-
-    beforeEach(() => {
-
-    });
-
+describe('printFoodList', () => {  
+    const spyCreateCard =  jest.spyOn(createModule, 'createCard');
     test('printFoodList(list, []) leaves the ul empty', () => {
         document.body.innerHTML = '<ul></ul>';
         const list = document.querySelector('ul');
@@ -28,5 +24,11 @@ describe('printFoodList', () => {
         const list = document.querySelector('ul');
         printFoodList(list, apiFoodFix);
         expect(apiFoodFix.length).toBe(list.children.length);
+    });
+    test('printFoodList(list,apiFoodFix) calls CreateCard', () => {
+        document.body.innerHTML = '<ul></ul>';
+        const list = document.querySelector('ul');
+        printFoodList(list, apiFoodFix);
+        expect(spyCreateCard).toHaveBeenCalled();
     });
 });
