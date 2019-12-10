@@ -18,7 +18,7 @@
         "id": "22b",
         "name": "Cocido madrileño",
         "price": 17.5,
-        "description": "La comida perfecta para el invierno",
+        "description": "La comida perfecta para el invierno, prepara tu cuchara!",
         "image":"https://rioluz.es/wp-content/uploads/2019/10/COCIDO-COMPLETO-500x500.jpg",
         "ingredients": [
             "garbanzos",
@@ -56,5 +56,73 @@
             "albahaca",
             "aceitunas"            
         ]
-    }      
+    },
+    {
+        "id": "55e",
+        "name": "Salmorejo",
+        "price": 10.20,
+        "description": "Una exquisita crema de tomate fresca con aceite de oliva virgen extra.",
+        "image":"http://www.tabernasalinas.com/wp-content/uploads/2016/11/plato-salmorejo-taberna-salinas.jpg",
+        "ingredients": [
+            "tomate",
+            "ajo",
+            "aceite",
+            "sal",
+            "pan",
+            "jamón"            
+        ]
+    } ,
+    {
+        "id": "66f",
+        "name": "Tortilla",
+        "price": 10.20,
+        "description": "Cuando pruebes la nuestra, dejará de gustarte la casera",
+        "image":"https://sugconservas.com/wp-content/uploads/2019/06/como-se-hacen-las-tortillas-500x500.png",
+        "ingredients": [
+            "huevos",
+            "patata",
+            "aceite",
+            "sal",
+            "cebolla"                       
+        ]
+    },
+    {
+        "id": "88h",
+        "name": "Solomillo al roquefort",
+        "price": 15.50,
+        "description": "La mejor carne de ternera con una salsa de queso azul",
+        "image":"https://i.pinimg.com/originals/59/99/11/599911d97c274eff58423eb111dfee7c.jpg",
+        "ingredients": [
+            "ternera",
+            "roquefort",
+            "patatas"       
+        ]
+    },
+    {
+        "id": "99i",
+        "name": "Canelones",
+        "price": 15.50,
+        "description": "Carne picada envuelta en pasta recién hecha con bechamel",
+        "image":"https://revistalvr.es/wp-content/uploads/2015/10/10991.jpg",
+        "ingredients": [
+            "picadillo",
+            "tomate",
+            "cebolla",
+            "pasta",
+            "bechamel"       
+        ]
+    }, 
+    {
+        "id": "77g",
+        "name": "Sorpresa",
+        "price": 15.50,
+        "description": "Te enviamos un plato sopresa, a qué esperas!",
+        "image":null,
+        "ingredients": [
+            "secreto",
+            "secreto",
+            "secreto",
+            "secreto"       
+        ]
+    }              
 ]

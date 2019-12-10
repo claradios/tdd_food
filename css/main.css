@@ -10,6 +10,7 @@ li {
 .app__header {
     text-align: center;
 }
+
 .display__list {
     display: grid;
 }
@@ -18,7 +19,7 @@ li {
     list-style: none;    
     border: 1px solid white;
     border-radius: 20px;
-    width: 300px;   
+    width: 250px;   
     margin: 15px;
     padding-bottom: 15px;
     display: flex;
@@ -60,10 +61,21 @@ li {
     padding: 2px;
     margin: 3px;
 }
-
+.main__cart{
+    /* background-color: black; */
+    border-left: 2px solid white;
+    padding: 10px;
+}
+.cart-icon{
+    font-size:25px;
+    color:white;
+}
 
 @media all and (min-width: 768px) {
-
+    .app__main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;    
+    }
     .display__list {
         grid-template-columns: 1fr 1fr;
     }
