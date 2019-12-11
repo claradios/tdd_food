@@ -24,14 +24,14 @@ function addToShopArray(event) {
 }
 
 function printShopingData(event) {
-    console.log('hola');
+    console.log(shopArray);
     const list = document.querySelector('.cart__list');
-    const priceArray = shopArray.map(item => item.price);
+    const priceArray = shopArray.map(item => parseFloat(item.price)); 
     const iva = 10;
     const articlesNum = shopArray.length;
+    const result = getTotalPrice(iva,priceArray); 
     addToShopArray(event);
     printFoodList(list,shopArray,createShoppingCard); 
-    const result = getTotalPrice(iva,priceArray);   //-> con un array de números recogidos del shopArray, cLISTA
     printCounterResult(result,articlesNum);
 }
 

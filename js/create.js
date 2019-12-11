@@ -1,5 +1,5 @@
 
-function getTotalPrice(iva = 10, ...nums) {
+function getTotalPrice(iva = 10, nums) {
     if (nums) {
         const sum = nums.reduce((total, actualNum) => total + actualNum, 0);
         const result = sum * (1 + iva / 100);
