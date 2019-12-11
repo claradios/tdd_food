@@ -11,7 +11,7 @@ function createDefaultObject() {
     const defaultObj = {
         defaultId : '1',
         defaultName : 'plato',
-        defaultPrice : '-',
+        defaultPrice : 10,
         defaultDesc : 'Sin descripción',
         defaultImg : 'https://via.placeholder.com/500x500',
         defaultIngredients : 'Ingredientes no disponibles'
@@ -48,4 +48,20 @@ function createCard (object) {
     };
 };
 
-export { getTotalPrice, createCard, getIngredientList, createDefaultObject };
+function createShoppingCard(obj) {
+    if(obj) {
+        
+        const { id, name, price } = obj;
+        const defaultObj = createDefaultObject();
+        const { defaultId, defaultName, defaultPrice } = defaultObj;
+    
+        const shopCard = `
+        <li data-id=${id || defaultId} class="shop-card">
+            <h3 class="shop-card__name">${name || defaultName}</h3>
+            <p class="shop-card__price">Precio: ${price || defaultPrice} €</p>
+        </li>`
+        return shopCard;
+    };
+};
+
+export { getTotalPrice, createCard, getIngredientList, createDefaultObject, createShoppingCard };

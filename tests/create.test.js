@@ -2,10 +2,12 @@ import {
     getTotalPrice,
     createCard,
     getIngredientList, 
-    createDefaultObject
+    createDefaultObject,
+    createShoppingCard
 } from '../js/create.js';
 
 import { apiFoodFix } from './fixtures/apiFoodFix';
+import { create } from 'domain';
 
 
 describe('getTotalPrice', () => {
@@ -33,7 +35,7 @@ describe('createDefaultObject', () => {
         const output = {
             defaultId : '1',
             defaultName : 'plato',
-            defaultPrice : '-',
+            defaultPrice : 10,
             defaultDesc : 'Sin descripción',
             defaultImg : 'https://via.placeholder.com/500x500',
             defaultIngredients : 'Ingredientes no disponibles'
@@ -66,13 +68,13 @@ describe('getIngredientsList', () => {
 });
 
 describe('createCard', () => {
-    test('createCard() restuns empty card', () => {
+    test('createCard() does not return anything', () => {
         const result = createCard();
 
         expect(result).toBe(undefined);
     });
  
-    test('createCard(obj) retund a printed card', () => {
+    test('createCard(obj) return a card', () => {
         const ing = '<li class ="ingredient">cheddar cheese</li><li class ="ingredient">eggs</li><li class ="ingredient">olive oil</li><li class ="ingredient">onions</li><li class ="ingredient">potato</li><li class ="ingredient">salt</li>'
         const input = apiFoodFix[0];
         const result = createCard(input);
@@ -95,7 +97,7 @@ describe('createCard', () => {
         const defaultObj = {
             defaultId : '1',
             defaultName : 'plato',
-            defaultPrice : '-',
+            defaultPrice : 10,
             defaultDesc : 'Sin descripción',
             defaultImg : 'https://via.placeholder.com/500x500',
             defaultIngredients : 'Ingredientes no disponibles'
@@ -117,5 +119,53 @@ describe('createCard', () => {
                 
         const result = createCard(input);
         expect(result).toEqual(output);
+    });
+});
+
+describe('createShoppingCard', () => {
+    test('createShopping() does not return anything', () => {
+        const result = createShoppingCard();
+
+        expect(result).toBe(undefined);
+    });
+
+    test('createShoppingCard(obj) return a card', () => {
+        const obj = {
+            id: '22a',
+            name: 'Hamburguesa',
+            price: 10
+        };
+        const { id, name, price } = obj
+        const output = `
+        <li data-id=${id} class="shop-card">
+            <h3 class="shop-card__name">${name}</h3>
+            <p class="shop-card__price">Precio: ${price} €</p>
+        </li>`
+        const result = createShoppingCard(obj);
+
+        expect(result).toEqual(output);
+    });
+    
+    test('createShoppingCard(obj) return a default card', () => {
+        const obj = {
+            id: undefined,
+            name: null,
+            price: null
+        }
+        const defaultObj = {
+            defaultId: '1',
+            defaultName: 'plato',
+            defaultPrice: 10
+        };
+        const { defaultId, defaultName, defaultPrice } = defaultObj
+        const output = `
+        <li data-id=${defaultId} class="shop-card">
+            <h3 class="shop-card__name">${defaultName}</h3>
+            <p class="shop-card__price">Precio: ${defaultPrice} €</p>
+        </li>`
+        const result = createShoppingCard(obj);
+
+        expect(result).toEqual(output);
+
     });
 });
