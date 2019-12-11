@@ -28,11 +28,11 @@ function printShopingData(event) {
     const list = document.querySelector('.cart__list');
     const priceArray = shopArray.map(item => item.price);
     const iva = 10;
+    const articlesNum = shopArray.length;
     addToShopArray(event);
     printFoodList(list,shopArray,createShoppingCard); 
-      //-> con el ul-cart, shopArray, createShopingCart()
     const result = getTotalPrice(iva,priceArray);   //-> con un array de números recogidos del shopArray, cLISTA
-    printCounterResult(result);
+    printCounterResult(result,articlesNum);
 }
 
 printDataFood();

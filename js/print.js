@@ -21,10 +21,11 @@ function listenCards(clase, func) {
 function printMsgEmptyCart() {
     const counter = document.querySelector('.cart__counter');
     if(counter) {
+        deleteMsgEmptyCart();
         const counterItems = counter.children[1];
         const msg = document.createTextNode('carrito vacío');
         const textWarning = document.createElement('p');
-        textWarning.className ='txt-warning';
+        textWarning.className ='txt-warning';        
         textWarning.appendChild(msg);   
         counter.insertBefore(textWarning, counterItems);
     }
