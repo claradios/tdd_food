@@ -2,21 +2,29 @@
 import { createCard } from './create.js';
 import { callApi } from './service.js';
 
-function printFoodList(list, arr = []) {
+function printFoodList(list, arr = [], func) {
     if (list) {
         let children = ''; 
-        arr.forEach( child => children += createCard(child));
+        arr.forEach( child => children += func(child));
         list.innerHTML = children;
+    }
+}
+
+function listenCards(clase, func) {
+    if(clase && func) {
+        const elements = document.querySelectorAll(`.${clase}`)
+        for(const element of elements) {
+            element.addEventListener('click',func);
+        }
     }
 }
 
 function printDataFood() {
     callApi().then( data => {
         const foodList = document.querySelector('.display__list');
-        console.log(foodList)
-        printFoodList(foodList, data); 
+        printFoodList(foodList, data, createCard); 
      });
-};
+}
 
-export { printFoodList, printDataFood };
+export { printFoodList, printDataFood, listenCards };
 

@@ -7,8 +7,6 @@ import {
 } from '../js/create.js';
 
 import { apiFoodFix } from './fixtures/apiFoodFix';
-import { create } from 'domain';
-
 
 describe('getTotalPrice', () => {
     test('getTotalPrice() returns 0', () => {
