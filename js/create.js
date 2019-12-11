@@ -19,14 +19,20 @@ function createDefaultObject() {
     return defaultObj;
 }
 
+function getIngredientList (ingredients) {
+    if (ingredients) {
+        let ingredientsList = ''; 
+        ingredients.forEach(ing => ingredientsList +=`<li class ="ingredient">${ing}</li>`);
+        return ingredientsList;
+    }
+}
+
 function createCard (object) {   
     if(object) {
         const defaultObj = createDefaultObject();
-        const { id, name, price, description, image, ingredients } = object;
         const {defaultId, defaultName, defaultPrice, defaultDesc, defaultImg, defaultIngredients} =defaultObj;
-
-         let ingredientsList = '';         
-        if (ingredients) {ingredients.forEach(ing => ingredientsList +=`<li class ="ingredient">${ing}</li>`)};
+        const { id, name, price, description, image, ingredients } = object;
+        const ingredientsList = getIngredientList(ingredients);
   
      const result =   `
         <li id=${id || defaultId} class="card">
