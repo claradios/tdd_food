@@ -45,9 +45,7 @@ function createCard (object) {
             <ul class="card__ingredients">${ingredientsList || defaultIngredients} </ul>
         </li>`
         return result;
-    } else {
-        return '';
     };
 };
 
-export { getTotalPrice, createCard };
+export { getTotalPrice, createCard, getIngredientList, createDefaultObject };

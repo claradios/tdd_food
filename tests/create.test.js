@@ -1,6 +1,8 @@
 import {
     getTotalPrice,
-    createCard
+    createCard,
+    getIngredientList, 
+    createDefaultObject
 } from '../js/create.js';
 
 import { apiFoodFix } from './fixtures/apiFoodFix';
@@ -25,11 +27,49 @@ describe('getTotalPrice', () => {
 
 });
 
+describe('createDefaultObject', () => {
+    test('return an object with default string properties', () => {
+        const result = createDefaultObject();
+        const output = {
+            defaultId : '1',
+            defaultName : 'plato',
+            defaultPrice : '-',
+            defaultDesc : 'Sin descripción',
+            defaultImg : 'https://via.placeholder.com/500x500',
+            defaultIngredients : 'Ingredientes no disponibles'
+        } 
+
+        expect(result).toEqual(output);       
+        expect(typeof result).toBe('object');
+        expect(result).toHaveProperty('defaultId');
+        expect(result).toHaveProperty('defaultName');
+        expect(result).toHaveProperty('defaultPrice');
+        expect(result).toHaveProperty('defaultDesc');
+        expect(result).toHaveProperty('defaultImg');
+        expect(result).toHaveProperty('defaultIngredients');
+    });
+
+});
+
+describe('getIngredientsList', () => {
+    test('return html string with a list of ingredients', () => {
+        const ingredients = ['manzana', 'pera'];
+        const output = `<li class ="ingredient">${ingredients[0]}</li><li class ="ingredient">${ingredients[1]}</li>`
+        const result = getIngredientList(ingredients);
+
+        expect(result).toEqual(output);
+    });
+    test('return html string with a list of ingredients', () => {        
+        const result = getIngredientList();
+        expect(result).toBe(undefined);
+    });
+});
+
 describe('createCard', () => {
     test('createCard() restuns empty card', () => {
         const result = createCard();
 
-        expect(result).toBe('');
+        expect(result).toBe(undefined);
     });
  
     test('createCard(obj) retund a printed card', () => {
