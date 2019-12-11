@@ -1,7 +1,6 @@
 'use strict';
-import { createCard } from './create.js';
-import { callApi } from './service.js';
-
+import {addToShopArray} from './main.js';
+let apiArray = [];
 function printFoodList(list, arr = [], func) {
     if (list) {
         let children = ''; 
@@ -19,12 +18,6 @@ function listenCards(clase, func) {
     }
 }
 
-function printDataFood() {
-    callApi().then( data => {
-        const foodList = document.querySelector('.display__list');
-        printFoodList(foodList, data, createCard); 
-     });
-}
 
 function printMsgEmptyCart() {
     const counter = document.querySelector('.cart__counter');
@@ -54,14 +47,8 @@ function printCounterResult(price,amount) {
     }    
 }
 
-function addToShopArray() {
-    // identifica id de la card
-    //busca ese id en el arrayAPI
-    //pilla el objeto que lo contiene ese ID 
-    //empuja el objeto en shopArray
-}
 
-function printShopingData() {
+function printShopingData(event) {
     // llama a addToShopArray()
     // llama a printFoodList() -> con el ul-cart, shopArray, createShopingCart()
     // llama a getTotalPrice() -> con un array de números recogidos del shopArray, cLISTA
@@ -70,5 +57,5 @@ function printShopingData() {
 
 
 
-export { printFoodList, printDataFood, listenCards, printCounterResult, printShopingData };
+export { printFoodList, listenCards, printCounterResult, printShopingData };
 
