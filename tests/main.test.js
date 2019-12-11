@@ -1,7 +1,8 @@
-import { printDataFood, addToShopArray } from '../js/main.js';
+import { printDataFood, addToShopArray, printShopingData } from '../js/main.js';
 import * as printModule from '../js/print.js';
 import * as serviceModule from '../js/service.js';
-
+import * as mainModule from '../js/main.js';
+import * as createModule from '../js/create.js';
 
 
 describe('prinDataFood ', () => {
@@ -15,6 +16,23 @@ describe('prinDataFood ', () => {
     });
 });
 
+describe('printShopingData', () => {
+
+    const spyAddToShopArray = jest.spyOn(mainModule, 'addToShopArray');
+    const spyPrintFoodList = jest.spyOn(printModule, 'printFoodList');
+    const spyGetTotalPrice = jest.spyOn(createModule, 'getTotalPrice');
+    const spyCounterResult = jest.spyOn(printModule, 'printCounterResult');
+
+    test('printShopingData() calls addToShopArray(), printFoodList(), getTotalPrice(),printCounterResult()', () => {
+
+        printShopingData();
+
+        expect(spyPrintFoodList).toHaveBeenCalled();
+        expect(spyGetTotalPrice).toHaveBeenCalled();
+        expect(spyCounterResult).toHaveBeenCalled();
+        //expect(spyAddToShopArray).toHaveBeenCalled();    
+    });
+});
 // describe('addToShopArray ', () => {
 //     document.body.innerHTML = `
 //         <ul>

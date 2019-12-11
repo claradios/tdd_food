@@ -2,12 +2,12 @@ import {
     printFoodList,
     listenCards,
     printCounterResult,
-    printShopingData
 } from '../js/print.js';
 import {
     apiFoodFix
 } from './fixtures/apiFoodFix';
 import * as createModule from '../js/create.js';
+
 
 
 describe('printFoodList', () => {
@@ -126,3 +126,6 @@ describe('printCounterResult', () => {
         expect(counterItems.innerHTML).toEqual(output);
     });
 });
+
+
+
