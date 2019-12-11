@@ -1,9 +1,9 @@
 
-function getTotalPrice(iva = 10, nums) {
+function getTotalPrice(nums, iva = 10) {
     if (nums) {
         const sum = nums.reduce((total, actualNum) => total + actualNum, 0);
         const result = sum * (1 + iva / 100);
-        return result;
+        return result.toFixed(2);
     } else { return 0; }
 }
 
@@ -50,7 +50,6 @@ function createCard(object) {
 
 function createShoppingCard(obj) {
     if (obj) {
-
         const { id, name, price } = obj;
         const defaultObj = createDefaultObject();
         const { defaultId, defaultName, defaultPrice } = defaultObj;

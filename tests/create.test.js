@@ -15,14 +15,14 @@ describe('getTotalPrice', () => {
         expect(result).toBe(0);
     });
     test('getTotalPrice(10,5,3) returns 8.8', () => {
-        const result = getTotalPrice(10, 5, 3);
+        const result = getTotalPrice([5, 3],10);
 
-        expect(result).toBe(8.8);
+        expect(result).toBe("8.80");
     });
     test('getTotalPrice(10,5,3,1) returns 9.9', () => {
-        const result = getTotalPrice(10, 5, 3, 1);
+        const result = getTotalPrice([5, 3, 1] ,10);
 
-        expect(result).toBe(9.9);
+        expect(result).toBe("9.90");
     });
 
 });

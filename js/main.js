@@ -23,14 +23,14 @@ function addToShopArray(event) {
     }
 }
 
-function printShopingData(event) {
-    console.log(shopArray);
-    const list = document.querySelector('.cart__list');
-    const priceArray = shopArray.map(item => parseFloat(item.price)); 
-    const iva = 10;
-    const articlesNum = shopArray.length;
-    const result = getTotalPrice(iva,priceArray); 
+function printShopingData(event) {  
     addToShopArray(event);
+
+    const list = document.querySelector('.cart__list');           
+    const articlesNum = shopArray.length;
+    const priceArray = shopArray.map(item => parseFloat(item.price)); 
+    const result = getTotalPrice(priceArray); 
+   
     printFoodList(list,shopArray,createShoppingCard); 
     printCounterResult(result,articlesNum);
 }

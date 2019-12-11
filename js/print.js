@@ -44,8 +44,8 @@ function printCounterResult(price,amount) {
         deleteMsgEmptyCart();
         const counterPrice = document.querySelector('.counter__price');
         const counterItems = document.querySelector('.counter__items');
-        counterPrice.innerHTML =`${price} €`; 
-        counterItems.innerHTML = `<span>${amount}</span> artículos`;  
+        if(counterPrice){counterPrice.innerHTML =`${price} €`}; 
+        if(counterItems){counterItems.innerHTML = `<span>${amount}</span> artículos`};  
     }    
 }
 
