@@ -14,21 +14,17 @@ function createDefaultObject() {
         defaultPrice : '-',
         defaultDesc : 'Sin descripción',
         defaultImg : 'https://via.placeholder.com/500x500',
-        defaultIngredientes : 'Ingredientes no disponibles'
+        defaultIngredients : 'Ingredientes no disponibles'
     }
     return defaultObj;
 }
 
-function createCard (object,defaultObj={}) {   
+function createCard (object) {   
     if(object) {
+        const defaultObj = createDefaultObject();
         const { id, name, price, description, image, ingredients } = object;
         const {defaultId, defaultName, defaultPrice, defaultDesc, defaultImg, defaultIngredients} =defaultObj;
-        // const defaultId = '1';
-        // const defaultName = 'plato';
-        // const defaultPrice = '-';
-        // const defaultDesc = 'Sin descripción';
-        // const defaultImg = 'https://via.placeholder.com/500x500';
-        // const defaultIngredientes = 'Ingredientes no disponibles';
+
          let ingredientsList = '';         
         if (ingredients) {ingredients.forEach(ing => ingredientsList +=`<li class ="ingredient">${ing}</li>`)};
   

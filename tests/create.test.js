@@ -52,9 +52,6 @@ describe('createCard', () => {
     });
     test('createCard(obj) retund a default card', () => {
         const input = apiFoodFix[1];
-        // const defaultName = 'plato';
-        // const defaultDesc = 'Sin descripción';
-        // const defaultIngredientes = 'Ingredientes no disponibles';
         const defaultObj = {
             defaultId : '1',
             defaultName : 'plato',
@@ -64,8 +61,9 @@ describe('createCard', () => {
             defaultIngredients : 'Ingredientes no disponibles'
         }
         const {defaultName,defaultDesc,defaultIngredients} = defaultObj;
-        const result = createCard(input,defaultObj);
-        const { id, name, price, description, image, ingredients } = input;        
+        const { id, name, price,image} = input; 
+
+               
         const output = `
         <li id=${id} class="card">
             <h3 class="card__name">${defaultName}</h3>
@@ -76,6 +74,8 @@ describe('createCard', () => {
             <p class="card__description">${defaultDesc}</p>
             <ul class="card__ingredients">${defaultIngredients} </ul>
         </li>`;
+                
+        const result = createCard(input);
         expect(result).toEqual(output);
     });
 });
