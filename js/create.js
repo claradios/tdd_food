@@ -7,10 +7,21 @@ function getTotalPrice (iva = 10,...nums ) {
     } else { return 0 ;}
  
 };
+function createDefaultObject() {   
+    const defaultObj = {
+        defaultId : '1',
+        defaultName : 'plato',
+        defaultPrice : '-',
+        defaultDesc : 'Sin descripción',
+        defaultImg : 'https://via.placeholder.com/500x500',
+        defaultIngredientes : 'Ingredientes no disponibles'
+    }
+}
 
-function createCard (object) {   
+function createCard (object,defaultObj={}) {   
     if(object) {
         const { id, name, price, description, image, ingredients } = object;
+        //const {defaultId, defaultName, defaultPrice, defaultDesc, defaultImg} =defaultObj;
         const defaultId = '1';
         const defaultName = 'plato';
         const defaultPrice = '-';

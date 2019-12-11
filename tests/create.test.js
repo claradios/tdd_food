@@ -32,8 +32,8 @@ describe('createCard', () => {
         expect(result).toBe('');
     });
  
-    test('createCard(obj) retund a pinted card', () => {
-        const ing = '<li>cheddar cheese</li><li>eggs</li><li>olive oil</li><li>onions</li><li>potato</li><li>salt</li>'
+    test('createCard(obj) retund a printed card', () => {
+        const ing = '<li class ="ingredient">cheddar cheese</li><li class ="ingredient">eggs</li><li class ="ingredient">olive oil</li><li class ="ingredient">onions</li><li class ="ingredient">potato</li><li class ="ingredient">salt</li>'
         const input = apiFoodFix[0];
         const result = createCard(input);
         const { id, name, price, description, image, ingredients } = input;        
@@ -42,7 +42,7 @@ describe('createCard', () => {
             <h3 class="card__name">${name}</h3>
             <p class="card__price">Precio: ${price} €</p>
             <div class="card__image">
-                <img src="${image}" alt="${name}">
+                <img class="card__photo" src="${image}" alt="${name}"/>
             </div>
             <p class="card__description">${description}</p>
             <ul class="card__ingredients">${ing} </ul>
@@ -62,7 +62,7 @@ describe('createCard', () => {
             <h3 class="card__name">${defaultName}</h3>
             <p class="card__price">Precio: ${price} €</p>
             <div class="card__image">
-                <img src="${image}" alt="${name}">
+                <img class="card__photo" src="${image}" alt="${name}"/>
             </div>
             <p class="card__description">${defaultDesc}</p>
             <ul class="card__ingredients">${defaultIngredientes} </ul>
