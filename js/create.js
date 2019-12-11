@@ -16,19 +16,20 @@ function createDefaultObject() {
         defaultImg : 'https://via.placeholder.com/500x500',
         defaultIngredientes : 'Ingredientes no disponibles'
     }
+    return defaultObj;
 }
 
 function createCard (object,defaultObj={}) {   
     if(object) {
         const { id, name, price, description, image, ingredients } = object;
-        //const {defaultId, defaultName, defaultPrice, defaultDesc, defaultImg} =defaultObj;
-        const defaultId = '1';
-        const defaultName = 'plato';
-        const defaultPrice = '-';
-        const defaultDesc = 'Sin descripción';
-        const defaultImg = 'https://via.placeholder.com/500x500';
-        const defaultIngredientes = 'Ingredientes no disponibles';
-        let ingredientsList = '';         
+        const {defaultId, defaultName, defaultPrice, defaultDesc, defaultImg, defaultIngredients} =defaultObj;
+        // const defaultId = '1';
+        // const defaultName = 'plato';
+        // const defaultPrice = '-';
+        // const defaultDesc = 'Sin descripción';
+        // const defaultImg = 'https://via.placeholder.com/500x500';
+        // const defaultIngredientes = 'Ingredientes no disponibles';
+         let ingredientsList = '';         
         if (ingredients) {ingredients.forEach(ing => ingredientsList +=`<li class ="ingredient">${ing}</li>`)};
   
      const result =   `
@@ -39,7 +40,7 @@ function createCard (object,defaultObj={}) {
                 <img class="card__photo" src="${image || defaultImg}" alt="${name}"/>
             </div>
             <p class="card__description">${description || defaultDesc}</p>
-            <ul class="card__ingredients">${ingredientsList || defaultIngredientes} </ul>
+            <ul class="card__ingredients">${ingredientsList || defaultIngredients} </ul>
         </li>`
         return result;
     } else {
