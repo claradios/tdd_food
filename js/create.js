@@ -56,7 +56,7 @@ function createShoppingCard(obj) {
 
         const shopCard = `
         <li data-id=${id || defaultId} class="shop-card">
-            <h3 class="shop-card__name">${name || defaultName}</h3>
+            <h4 class="shop-card__name">${name || defaultName}</h4>
             <p class="shop-card__price">Precio: ${price || defaultPrice} €</p>
         </li>`
         return shopCard;
