@@ -136,7 +136,7 @@ describe('createShoppingCard', () => {
         const { id, name, price } = obj
         const output = `
         <li data-id=${id} class="shop-card">
-            <h3 class="shop-card__name">${name}</h3>
+            <h4 class="shop-card__name">${name}</h4>
             <p class="shop-card__price">Precio: ${price} €</p>
         </li>`
         const result = createShoppingCard(obj);
@@ -158,7 +158,7 @@ describe('createShoppingCard', () => {
         const { defaultId, defaultName, defaultPrice } = defaultObj
         const output = `
         <li data-id=${defaultId} class="shop-card">
-            <h3 class="shop-card__name">${defaultName}</h3>
+            <h4 class="shop-card__name">${defaultName}</h4>
             <p class="shop-card__price">Precio: ${defaultPrice} €</p>
         </li>`
         const result = createShoppingCard(obj);
