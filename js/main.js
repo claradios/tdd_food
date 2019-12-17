@@ -15,25 +15,24 @@ function printDataFood() {
     });
 }
 
+function findAndPush(id, referenceArray, pushableArray) {
+    const newArray = referenceArray.filter(item => item.id === id);
+    pushableArray.push(newArray[0]);
+}
+
 function addToShopArray(event) {
     if (event) {
         const id = event.currentTarget.id;
-        const newArray = apiArray.filter(item => item.id === id);
-        shopArray.push(newArray[0]);
+        findAndPush(id, apiArray, shopArray);
     }
 }
 
 function deleteArrayItem(element, array) {
-   // element.data('id')
-   //getAttribute('data-id')
-    if(element) {
+    if(element && array) {
         const id = element.id;
-        console.log(element.id)
-        const itemToDelete = array.findIndex(item => item.id === id);
-        console.log(itemToDelete);
+        const itemToDelete = array.findIndex(item => item.id === id); 
         const newArray = array.splice(itemToDelete, 1);
-        array = newArray;
-        //return array;
+        array = newArray;   
     }
 }
 
@@ -52,7 +51,7 @@ function printShopingData(event) {
     rePrintCart();
 }
 
-function refreshCart(event) { 
+function refreshCart(event) {   
     const element= event.currentTarget;   
     deleteArrayItem(element, shopArray);
     rePrintCart();
@@ -61,5 +60,5 @@ function refreshCart(event) {
 printDataFood();
 
 
-export { printDataFood, addToShopArray, printShopingData, deleteArrayItem };
+export { printDataFood, addToShopArray, printShopingData, deleteArrayItem, findAndPush, refreshCart, rePrintCart };
 
