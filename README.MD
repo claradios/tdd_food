@@ -10,3 +10,11 @@ Requisitos definidos:
 - Cada plato debe tener un nombre, descripción con los ingredientes y precio.
 - Cada plato puede ser añadido al carrito de la compra tantas veces como el usuario quiera.
 - En el carrito de la compra se debe mostrar al usuario los platos que ha agregado, la suma total de sus valores por cantidades seleccionados + IVA.
+
+## To do list
+- Hacer fetch con async await.
+- Testear error del fetch.
+- Agrupar artículos repetidos en la misma tarjeta con indicador numérico.
+- Arreglar estilos responsive.
+- Dar estilo al botón de eliminar.
+- Simular un cierre de compra.
