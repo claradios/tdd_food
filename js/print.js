@@ -17,7 +17,6 @@ function listenCards(clase, func) {
     }
 }
 
-
 function printMsgEmptyCart() {
     const counter = document.querySelector('.cart__counter');
     if(counter) {
@@ -36,7 +35,6 @@ function deleteMsgEmptyCart() {
     if (msgEmptyCart) {msgEmptyCart.remove()};
 }
 
-
 function printCounterResult(price,amount) {
     if (!price) {
         printMsgEmptyCart();
@@ -48,11 +46,6 @@ function printCounterResult(price,amount) {
         if(counterItems){counterItems.innerHTML = `<span>${amount}</span> artículos`};  
     }    
 }
-
-
-
-
-
 
 export { printFoodList, listenCards, printCounterResult};
 
