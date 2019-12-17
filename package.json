@@ -21,7 +21,8 @@
   "homepage": "https://github.com/claradios/tdd_food#readme",
   "devDependencies": {
     "jest": "^24.9.0",
-    "jest-fetch-mock": "^2.1.2"
+    "jest-fetch-mock": "^2.1.2",
+    "puppeteer": "^2.0.0"
   },
   "dependencies": {
     "@babel/core": "^7.7.4",

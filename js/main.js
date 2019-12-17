@@ -15,27 +15,50 @@ function printDataFood() {
     });
 }
 
+function findAndPush(id, referenceArray, pushableArray) {
+    const newArray = referenceArray.filter(item => item.id === id);
+    pushableArray.push(newArray[0]);
+}
+
 function addToShopArray(event) {
     if (event) {
         const id = event.currentTarget.id;
-        const newArray = apiArray.filter(item => item.id === id);
-        shopArray.push(newArray[0]);
+        findAndPush(id, apiArray, shopArray);
     }
+}
+
+function deleteArrayItem(element, array) {
+    if(element && array) {
+        const id = element.id;
+        const itemToDelete = array.findIndex(item => item.id === id); 
+        const newArray = array.splice(itemToDelete, 1);
+        array = newArray;   
+    }
+}
+
+function rePrintCart() {
+    const list = document.querySelector('.cart__list');           
+    const articlesNum = shopArray.length;
+    const priceArray = shopArray.map(item => parseFloat(item.price)); 
+    const result = getTotalPrice(priceArray);    
+    printFoodList(list,shopArray,createShoppingCard); 
+    listenCards('shop-card__btn',refreshCart);
+    printCounterResult(result,articlesNum);
 }
 
 function printShopingData(event) {  
     addToShopArray(event);
+    rePrintCart();
+}
 
-    const list = document.querySelector('.cart__list');           
-    const articlesNum = shopArray.length;
-    const priceArray = shopArray.map(item => parseFloat(item.price)); 
-    const result = getTotalPrice(priceArray); 
-   
-    printFoodList(list,shopArray,createShoppingCard); 
-    printCounterResult(result,articlesNum);
+function refreshCart(event) {   
+    const element= event.currentTarget;   
+    deleteArrayItem(element, shopArray);
+    rePrintCart();
 }
 
 printDataFood();
 
-export { printDataFood, addToShopArray, printShopingData };
+
+export { printDataFood, addToShopArray, printShopingData, deleteArrayItem, findAndPush, refreshCart, rePrintCart };
 
