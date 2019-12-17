@@ -64,35 +64,35 @@ describe('addToShopArray method', () => {
     });
 });
 
-describe('refreshCart method', () => {
+// describe('refreshCart method', () => {
 
-    const spyRePrintCart = jest.spyOn(mainModule, 'rePrintCart');
-    const spyDeleteArrayItem = jest.spyOn(mainModule, 'deleteArrayItem');    
+//     const spyRePrintCart = jest.spyOn(mainModule, 'rePrintCart');
+//     const spyDeleteArrayItem = jest.spyOn(mainModule, 'deleteArrayItem');    
 
-    test('addToShopArray calls deleteArrayItem()', () => {  
-        document.body.innerHTML = '<button id="1"></button>';
-        const btnTest = document.querySelector('button');      
-        let shopArray = [{name:"burguer", id:"2a"}];
+//     test('addToShopArray calls deleteArrayItem()', () => {  
+//         document.body.innerHTML = '<button id="1"></button>';
+//         const btnTest = document.querySelector('button');      
+//         let shopArray = [{name:"burguer", id:"2a"}];
  
-        btnTest.addEventListener('click',refreshCart);
+//         btnTest.addEventListener('click',refreshCart);
         
-         btnTest.click();      
+//          btnTest.click();      
 
-        expect(spyDeleteArrayItem).toHaveBeenCalled();
+//         expect(spyDeleteArrayItem).toHaveBeenCalled();
         
-     });
-     test('addToShopArray calls rePrintCart()', () => {   
-        document.body.innerHTML = '<button id="1"></button>';
-        const btnTest = document.querySelector('button');      
-        let shopArray = [{name:"burguer", id:"2a"}];
+//      });
+//      test('addToShopArray calls rePrintCart()', () => {   
+//         document.body.innerHTML = '<button id="1"></button>';
+//         const btnTest = document.querySelector('button');      
+//         let shopArray = [{name:"burguer", id:"2a"}];
  
-        btnTest.addEventListener('click',refreshCart);
+//         btnTest.addEventListener('click',refreshCart);
         
-         btnTest.click();          
+//          btnTest.click();          
 
-        expect(spyRePrintCart).toHaveBeenCalled();
+//         expect(spyRePrintCart).toHaveBeenCalled();
   
-     });
-});
+//      });
+// });
 
 

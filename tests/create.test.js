@@ -76,7 +76,7 @@ describe('createCard', () => {
         const ing = '<li class ="ingredient">cheddar cheese</li><li class ="ingredient">eggs</li><li class ="ingredient">olive oil</li><li class ="ingredient">onions</li><li class ="ingredient">potato</li><li class ="ingredient">salt</li>'
         const input = apiFoodFix[0];
         const result = createCard(input);
-        const { id, name, price, description, image, ingredients } = input;        
+        const { id, name, price, description, image } = input;        
         const output = `
         <li id=${id} class="card">
             <h3 class="card__name">${name}</h3>

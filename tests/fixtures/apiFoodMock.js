@@ -1,0 +1,128 @@
+ export const apiFoodMock =[
+    {
+        "id": "11a",
+        "name": "Hamburguesa clásica",
+        "price": 13.5,
+        "description": "Carne de ternera tierna con un toque de mostaza",
+        "image":"http://www.oliveradatenea.com/wp-content/uploads/2013/01/Receta-de-hamburguesa-con-salsa-brava-Olivera-dAtenea-2.jpg",
+        "ingredients": [
+            "cheddar",
+            "eggs",
+            "olive oil",
+            "onions",
+            "potato",
+            "salt"
+        ]
+    },
+    {
+        "id": "22b",
+        "name": "Cocido madrileño",
+        "price": 17.5,
+        "description": "La comida perfecta para el invierno, prepara tu cuchara!",
+        "image":"https://rioluz.es/wp-content/uploads/2019/10/COCIDO-COMPLETO-500x500.jpg",
+        "ingredients": [
+            "garbanzos",
+            "fideos",
+            "berza",
+            "chorizo",
+            "vacuno",
+            "pollo"
+        ]
+    },
+    {
+        "id": "33c",
+        "name": "Espaguetis",
+        "price": 10,
+        "description": "Con todo el sabor de italia directo a tu casa",
+        "image":"https://envato-shoebox-0.imgix.net/0334/bafb-271d-4b1d-add5-a0a1286aa5e2/_MG_6846_1.jpg?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=900&s=37ea794186b2eb7b04d3fee6847f860b",
+        "ingredients": [
+            "espaguetis",
+            "tomate",
+            "carne",
+            "albahaca",
+            "queso"            
+        ]
+    },
+    {
+        "id": "44d",
+        "name": "Pizza",
+        "price": 8.30,
+        "description": "Con todo el sabor de italia directo a tu casa",
+        "image":"https://www.africanbites.com/wp-content/uploads/2019/10/IMG_1636-2-500x500.jpg",
+        "ingredients": [
+            "trigo",
+            "tomate",
+            "queso",
+            "albahaca",
+            "aceitunas"            
+        ]
+    },
+    {
+        "id": "55e",
+        "name": "Salmorejo",
+        "price": 10.20,
+        "description": "Una exquisita crema de tomate fresca con aceite de oliva virgen extra.",
+        "image":"http://www.tabernasalinas.com/wp-content/uploads/2016/11/plato-salmorejo-taberna-salinas.jpg",
+        "ingredients": [
+            "tomate",
+            "ajo",
+            "aceite",
+            "sal",
+            "pan",
+            "jamón"            
+        ]
+    } ,
+    {
+        "id": "66f",
+        "name": "Tortilla",
+        "price": 10.20,
+        "description": "Cuando pruebes la nuestra, dejará de gustarte la casera",
+        "image":"https://sugconservas.com/wp-content/uploads/2019/06/como-se-hacen-las-tortillas-500x500.png",
+        "ingredients": [
+            "huevos",
+            "patata",
+            "aceite",
+            "sal",
+            "cebolla"                       
+        ]
+    },
+    {
+        "id": "88h",
+        "name": "Solomillo al roquefort",
+        "price": 15.50,
+        "description": "La mejor carne de ternera con una salsa de queso azul",
+        "image":"https://i.pinimg.com/originals/59/99/11/599911d97c274eff58423eb111dfee7c.jpg",
+        "ingredients": [
+            "ternera",
+            "roquefort",
+            "patatas"       
+        ]
+    },
+    {
+        "id": "99i",
+        "name": "Canelones",
+        "price": 15.50,
+        "description": "Carne picada envuelta en pasta recién hecha con bechamel",
+        "image":"https://revistalvr.es/wp-content/uploads/2015/10/10991.jpg",
+        "ingredients": [
+            "picadillo",
+            "tomate",
+            "cebolla",
+            "pasta",
+            "bechamel"       
+        ]
+    }, 
+    {
+        "id": "77g",
+        "name": "Sorpresa",
+        "price": 15.50,
+        "description": "Te enviamos un plato sopresa, a qué esperas!",
+        "image":null,
+        "ingredients": [
+            "secreto",
+            "secreto",
+            "secreto",
+            "secreto"       
+        ]
+    }              
+]
