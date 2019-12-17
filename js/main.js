@@ -24,24 +24,38 @@ function addToShopArray(event) {
 }
 
 function deleteArrayItem(element, array) {
-    if(element.id) {
+   // element.data('id')
+   //getAttribute('data-id')
+    if(element) {
         const id = element.id;
+        console.log(element.id)
         const itemToDelete = array.findIndex(item => item.id === id);
+        console.log(itemToDelete);
         const newArray = array.splice(itemToDelete, 1);
         array = newArray;
+        //return array;
     }
+}
+
+function rePrintCart() {
+    const list = document.querySelector('.cart__list');           
+    const articlesNum = shopArray.length;
+    const priceArray = shopArray.map(item => parseFloat(item.price)); 
+    const result = getTotalPrice(priceArray);    
+    printFoodList(list,shopArray,createShoppingCard); 
+    listenCards('shop-card__btn',refreshCart);
+    printCounterResult(result,articlesNum);
 }
 
 function printShopingData(event) {  
     addToShopArray(event);
+    rePrintCart();
+}
 
-    const list = document.querySelector('.cart__list');           
-    const articlesNum = shopArray.length;
-    const priceArray = shopArray.map(item => parseFloat(item.price)); 
-    const result = getTotalPrice(priceArray); 
-   
-    printFoodList(list,shopArray,createShoppingCard); 
-    printCounterResult(result,articlesNum);
+function refreshCart(event) { 
+    const element= event.currentTarget;   
+    deleteArrayItem(element, shopArray);
+    rePrintCart();
 }
 
 printDataFood();

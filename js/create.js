@@ -58,6 +58,7 @@ function createShoppingCard(obj) {
         <li data-id=${id || defaultId} class="shop-card">
             <h3 class="shop-card__name">${name || defaultName}</h3>
             <p class="shop-card__price">Precio: ${price || defaultPrice} €</p>
+            <button class="shop-card__btn" id=${id || defaultId}>X</button>
         </li>`
         return shopCard;
     };
