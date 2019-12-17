@@ -17,3 +17,4 @@ Requisitos definidos:
 - Arreglar estilos responsive.
 - Dar estilo al botón de eliminar.
 - Simular un cierre de compra.
+- Poder filtrar alimentos
