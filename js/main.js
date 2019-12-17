@@ -2,12 +2,13 @@
 import { printFoodList, listenCards, printCounterResult} from './print.js';
 import { getTotalPrice, createShoppingCard } from './create.js';
 import { createCard } from './create.js';
-import { callApi } from './service.js';
+import { callApiAs } from './callApiAs.js';
+const ENDPOINT = '../apiFood.json';
 let shopArray = [];
 let apiArray = [];
 
 function printDataFood() {
-    callApi().then(data => {
+    callApiAs(ENDPOINT).then(data => {
         apiArray = data;
         const foodList = document.querySelector('.display__list');
         printFoodList(foodList, apiArray, createCard);
@@ -16,8 +17,10 @@ function printDataFood() {
 }
 
 function findAndPush(id, referenceArray, pushableArray) {
-    const newArray = referenceArray.filter(item => item.id === id);
-    pushableArray.push(newArray[0]);
+    if (referenceArray && pushableArray) {
+        const newArray = referenceArray.filter(item => item.id === id);
+        pushableArray.push(newArray[0]);
+    }
 }
 
 function addToShopArray(event) {

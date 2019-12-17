@@ -1,9 +1,4 @@
 
-// function showError(errorMsg , containerSelec) {
-//   const container = document.querySelector(`${containerSelec}`);
-//   container.innerHTML = errorMsg;
-// }
-
 import {showError} from './error.js';
 
 

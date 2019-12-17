@@ -1,17 +1,17 @@
 import { printDataFood, addToShopArray, printShopingData, findAndPush, refreshCart } from '../js/main.js';
 import * as printModule from '../js/print.js';
-import * as serviceModule from '../js/service.js';
+import * as callApiAsModule from '../js/callApiAs.js';
 import * as mainModule from '../js/main.js';
 import * as createModule from '../js/create.js';
 
 
 describe('prinDataFood ', () => {
     
-    const spyCallApi = jest.spyOn(serviceModule, 'callApi');
+    const spyCallApiAs = jest.spyOn(callApiAsModule, 'callApiAs');
     const spyPrintFoodList = jest.spyOn(printModule, 'printFoodList');
     test('printDataFood() gets data from api', () => {
         printDataFood();
-        expect(spyCallApi).toHaveBeenCalled();
+        expect(spyCallApiAs).toHaveBeenCalled();
         // expect(spyPrintFoodList).toHaveBeenCalled();
     });
 });
