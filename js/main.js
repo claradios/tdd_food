@@ -23,6 +23,15 @@ function addToShopArray(event) {
     }
 }
 
+function deleteArrayItem(element, array) {
+    if(element.id) {
+        const id = element.id;
+        const itemToDelete = array.findIndex(item => item.id === id);
+        const newArray = array.splice(itemToDelete, 1);
+        array = newArray;
+    }
+}
+
 function printShopingData(event) {  
     addToShopArray(event);
 
@@ -37,5 +46,6 @@ function printShopingData(event) {
 
 printDataFood();
 
-export { printDataFood, addToShopArray, printShopingData };
+
+export { printDataFood, addToShopArray, printShopingData, deleteArrayItem };
 
